@@ -28,17 +28,37 @@
 				Built by
 				<a href="https://phillipcurl.com" target="_blank" rel="noopener noreferrer">PC</a>
 			</h4>
+			<div style="text-align: left;">
+				<pre>{{siteInfo}}</pre>
+			</div>
+			<div style="text-align: left;">
+				<pre>{{contactInfo}}</pre>
+			</div>
+			<div style="text-align: left;">
+				<pre>{{socialInfo}}</pre>
+			</div>
+			<div style="text-align: left;">
+				<pre>{{themeInfo}}</pre>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
-	async asyncData({ params, app, payload, route, store }) {
-		let info = await import("~/assets/content/config/info.json");
-		return {
-			siteInfo: info
-		};
+	computed: {
+		siteInfo() {
+			return this.$store.state.siteInfo;
+		},
+		contactInfo() {
+			return this.$store.state.contact.info;
+		},
+		socialInfo() {
+			return this.$store.state.social.info;
+		},
+		themeInfo() {
+			return this.$store.state.theme.info;
+		}
 	}
 };
 </script>

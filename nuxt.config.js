@@ -115,8 +115,13 @@ function getDynamicPaths(urlFilepathTable) {
 		...Object.keys(urlFilepathTable).map(url => {
 			const filepathGlob = urlFilepathTable[url];
 			return glob
-				.sync(filepathGlob, { cwd: 'content' })
-				.map(filepath => `${url}/${path.basename(filepath, '.json')}/`);
+				.sync(filepathGlob, { cwd: 'assets/content' })
+				.map(filepath => {
+					return {
+						route: `${url}/${path.basename(filepath, '.json')}/`,
+						payload: require(filepath)
+					};
+				});
 		})
 	);
 }

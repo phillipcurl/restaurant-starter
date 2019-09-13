@@ -5,12 +5,15 @@ export const state = () => ({
 export const actions = {
 	async nuxtServerInit({ dispatch }) {
 		try {
-			await dispatch('getSiteInfo');
+			await dispatch('fetchSiteInfo');
+			await dispatch('contact/fetchContactInfo');
+			await dispatch('social/fetchSocialInfo');
+			await dispatch('theme/fetchThemeInfo');
 		} catch (e) {
 			console.log(e);
 		}
 	},
-	getSiteInfo({ state, commit }) {
+	fetchSiteInfo({ state, commit }) {
 		try {
 			const info = require('~/assets/content/config/info.json');
 			commit('SET_SITE_INFO', info);
