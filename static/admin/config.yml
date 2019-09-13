@@ -14,7 +14,7 @@ collections:
       - label: 'Restaurant Info'
         name: 'info'
         format: 'json'
-        file: 'assets/content/setup/config.json'
+        file: 'assets/content/config/info.json'
         fields:
           - { label: Restaurant Name, name: name, widget: string }
           - { label: Restaurant Slogan, name: description, widget: string }
@@ -39,7 +39,7 @@ collections:
       - label: 'Theme Settings'
         name: 'theme'
         format: 'json'
-        file: 'assets/content/setup/theme.json'
+        file: 'assets/content/config/theme.json'
         fields:
           - { label: Primary Color, name: primary_color, widget: string }
           - { label: Secondary Color, name: secondary_color, widget: string }
@@ -55,7 +55,7 @@ collections:
       - label: 'Social Media Settings'
         name: 'social'
         format: 'json'
-        file: 'assets/content/setup/social.json'
+        file: 'assets/content/config/social.json'
         fields:
           - { label: Facebook, name: fb_url, widget: string, required: false }
           - {
@@ -74,7 +74,7 @@ collections:
       - label: 'Contact Settings'
         name: 'contact'
         format: 'json'
-        file: 'assets/content/setup/contact.json'
+        file: 'assets/content/config/contact.json'
         fields:
           - { label: Address, name: address, widget: map }
           - { label: Phone Number, name: phone, widget: string }

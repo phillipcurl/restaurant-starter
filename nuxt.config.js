@@ -1,4 +1,4 @@
-const siteInfo = require('./assets/content/setup/config.json');
+const siteInfo = require('./assets/content/config/info.json');
 console.log(siteInfo);
 const glob = require('glob');
 const path = require('path');

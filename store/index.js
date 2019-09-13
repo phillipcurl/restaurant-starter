@@ -12,7 +12,7 @@ export const actions = {
 	},
 	getSiteInfo({ state, commit }) {
 		try {
-			const info = require('~/assets/content/setup/config.json');
+			const info = require('~/assets/content/config/info.json');
 			commit('SET_SITE_INFO', info);
 		} catch (e) {
 			commit('SET_SITE_INFO', {});
