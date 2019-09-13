@@ -78,7 +78,7 @@ collections:
         fields:
           - { label: Address, name: address, widget: map }
           - { label: Phone Number, name: phone, widget: string }
-          - { label: Phone Number, name: phone, widget: string }
+          - { label: Email, name: email, widget: string }
   # - name: 'blog' # Used in routes, e.g., /admin/collections/blog
   #   label: 'Blog' # Used in the UI
   #   folder: 'content/blog/posts' # The path to the folder where the documents are stored
