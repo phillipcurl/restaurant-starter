@@ -17,20 +17,20 @@ export const actions = {
 		} catch (e) {
 			commit('SET_SITE_INFO', {});
 		}
-	},
-	async fetchPosts({ commit }) {
-		let files = await require.context(
-			'~/assets/content/blog/',
-			false,
-			/\.json$/
-		);
-		let blogPosts = files.keys().map(key => {
-			let res = files(key);
-			res.slug = key.slice(2, -5);
-			return res;
-		});
-		await commit('setBlogPosts', blogPosts);
 	}
+	// async fetchPosts({ commit }) {
+	// 	let files = await require.context(
+	// 		'~/assets/content/blog/',
+	// 		false,
+	// 		/\.json$/
+	// 	);
+	// 	let blogPosts = files.keys().map(key => {
+	// 		let res = files(key);
+	// 		res.slug = key.slice(2, -5);
+	// 		return res;
+	// 	});
+	// 	await commit('setBlogPosts', blogPosts);
+	// }
 };
 
 export const mutations = {
