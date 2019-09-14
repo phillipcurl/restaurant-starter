@@ -1,11 +1,23 @@
 <template>
 	<div>
+		<navigation />
 		<nuxt />
 	</div>
 </template>
 
+<script>
+import Navigation from "~/components/Navigation";
+
+export default {
+	components: {
+		Navigation
+	}
+};
+</script>
+
 <style>
-html {
+html,
+body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 16px;
@@ -22,5 +34,14 @@ html {
 *:after {
 	box-sizing: border-box;
 	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
 }
 </style>
