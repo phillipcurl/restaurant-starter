@@ -1,7 +1,6 @@
 {
-	"primary_color": "black",
-	"secondary_color": "white",
-	"theme": "modern",
-	"is_dark": false,
-	"feature_font": null
+  "primary_color": "black",
+  "secondary_color": "tomato",
+  "theme": "modern",
+  "is_dark": false
 }
