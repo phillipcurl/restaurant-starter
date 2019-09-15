@@ -42,7 +42,11 @@
 							:aria-label="`Learn more about ${siteInfo.name}`"
 							:title="`Learn more about ${siteInfo.name}`"
 						>
-							<span class="mr-3">Learn more</span>
+							<span
+								class="mr-3"
+								:aria-label="`Learn more about ${siteInfo.name}`"
+								:title="`Learn more about ${siteInfo.name}`"
+							>Learn more</span>
 							<svg
 								viewBox="0 0 24 24"
 								width="20"
