@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="theme-modern">
 		<navigation />
 		<main class="main-content">
 			<nuxt />
@@ -38,16 +38,31 @@ body {
 	margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1:not(.font-black),
+h2:not(.font-black),
+h3:not(.font-black),
+h4:not(.font-black),
+h5:not(.font-black),
+h6:not(.font-black) {
 	font-weight: 700;
+}
+
+.theme-modern h1,
+.theme-modern h2,
+.theme-modern h3,
+.theme-modern h4,
+.theme-modern h5,
+.theme-modern h6 {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .main-content {
 	padding-top: 52px;
+}
+
+.theme-modern .font-feature {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 </style>

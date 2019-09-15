@@ -42,7 +42,6 @@ export default {
 .md-content h4,
 .md-content h5,
 .md-content h6 {
-	color: #363636;
 	font-weight: 700;
 	line-height: 1.125;
 }
@@ -90,8 +89,9 @@ export default {
 }
 
 .md-content blockquote {
-	background-color: whitesmoke;
+	/* background-color: whitesmoke; */
 	border-left: 5px solid #dbdbdb;
+	font-style: italic;
 	padding: 1.25em 1.5em;
 }
 

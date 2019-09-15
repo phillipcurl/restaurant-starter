@@ -1,0 +1,55 @@
+<template>
+	<div class="about-page">
+		<hero-section height="55vh">
+			<h1
+				class="text-5xl font-black py-0 mb-0 lh-none break-word"
+				:class="{'uppercase tracking-widest': themeInfo.theme === 'modern'}"
+			>
+				About
+				<br />
+				{{siteInfo.name}}
+			</h1>
+		</hero-section>
+		<div class="w-full container mx-auto flex flex-wrap md:flex-no-wrap px-3 py-8">
+			<!-- <h1 class="text-6xl font-black">About {{siteInfo.name}}</h1> -->
+			<div class="w-full md:w-2/3 px-4 py-4">
+				<section class="w-full">
+					<md-content :content="aboutInfo.body" />
+				</section>
+			</div>
+			<div class="w-full md:w-1/3">
+				<location-card class="mb-12" />
+				<hours-card />
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+import * as themeInfo from "~/assets/content/config/theme.json";
+import HeroSection from "~/components/HeroSection";
+import MdContent from "~/components/MdContent";
+import HoursCard from "~/components/HoursCard";
+import LocationCard from "~/components/LocationCard";
+
+export default {
+	layout: themeInfo.theme,
+	computed: {
+		siteInfo() {
+			return this.$store.state.siteInfo;
+		},
+		aboutInfo() {
+			return this.$store.state.about.info;
+		},
+		themeInfo() {
+			return this.$store.state.theme.info;
+		}
+	},
+	components: {
+		HeroSection,
+		MdContent,
+		HoursCard,
+		LocationCard
+	}
+};
+</script>

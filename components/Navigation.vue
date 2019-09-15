@@ -1,15 +1,40 @@
 <template>
-	<header class="fixed top-0 right-0 left-0 w-full px-3 text-white">
+	<header
+		class="fixed top-0 right-0 left-0 w-full px-0 md:px-3 bg-white shadow z-50 site-navigation"
+		:class="{'bg-white text-primary': !themeInfo.is_dark, 'bg-gray-900 text-white': themeInfo.is_dark}"
+	>
 		<div class="w-full container mx-auto flex items-center justify-between">
 			<nav class="flex-grow inline-flex items-center">
-				<nuxt-link to="/" exact class="py-2 px-3 text-2xl font-bold mr-5">{{siteInfo.name}}</nuxt-link>
-				<nuxt-link to="/menu" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Menu</nuxt-link>
-				<nuxt-link to="/menu" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Location</nuxt-link>
-				<nuxt-link to="/menu" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">About</nuxt-link>
-				<nuxt-link to="/menu" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Contact</nuxt-link>
+				<nuxt-link to="/" exact class="py-2 px-3 text-2xl font-bold font-feature mr-5">{{siteInfo.name}}</nuxt-link>
+				<div class="hidden md:inline-flex items-center">
+					<nuxt-link to="/menu" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Menu</nuxt-link>
+					<nuxt-link to="/location" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Location</nuxt-link>
+					<nuxt-link to="/about" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">About</nuxt-link>
+					<nuxt-link to="/contact" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Contact</nuxt-link>
+				</div>
 			</nav>
-			<div class="flex-no-shrink">
-				<social-links />
+			<div class="flex-no-shrink inline-flex items-center">
+				<a
+					:href="`tel:${contactInfo.phone}`"
+					class="inline-flex items-center py-2 px-3"
+					:aria-label="`Call ${siteInfo.name}`"
+				>
+					<svg
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+						stroke-width="2"
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-5 h-5"
+					>
+						<path
+							d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+						/>
+					</svg>
+					<span class="text-sm ml-2 leading-none font-semibold">{{contactInfo.phone}}</span>
+				</a>
+				<social-links class="hidden md:inline-flex" />
 			</div>
 		</div>
 	</header>

@@ -9,6 +9,7 @@ export const actions = {
 			await dispatch('contact/fetchContactInfo');
 			await dispatch('social/fetchSocialInfo');
 			await dispatch('theme/fetchThemeInfo');
+			await dispatch('about/fetchAboutInfo');
 		} catch (e) {
 			console.log(e);
 		}

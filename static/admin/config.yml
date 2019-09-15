@@ -47,7 +47,7 @@ collections:
               label: Theme,
               name: theme,
               widget: 'select',
-              options: ['modern', 'fancy'],
+              options: ['modern', 'classic'],
               default: 'modern',
             }
           - { label: Darker Version, name: is_dark, widget: boolean }
@@ -76,28 +76,30 @@ collections:
         format: 'json'
         file: 'assets/content/config/contact.json'
         fields:
-          - { label: Address, name: address, widget: map }
+          - { label: Street Address, name: address, widget: string }
+          - { label: City, name: city, widget: string }
+          - { label: State, name: state, widget: string }
+          - { label: Zip Code, name: zip, widget: string }
+          - { label: Map Location, name: geo, widget: map, required: false }
+          - {
+              label: Location Notes,
+              name: notes,
+              widget: string,
+              required: false,
+            }
           - { label: Phone Number, name: phone, widget: string }
           - { label: Email, name: email, widget: string }
-  # - name: 'blog' # Used in routes, e.g., /admin/collections/blog
-  #   label: 'Blog' # Used in the UI
-  #   folder: 'assets/content/blog/posts' # The path to the folder where the documents are stored
-  #   create: true # Allow users to create new documents in this collection
-  #   slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-  #   format: 'json'
-  #   sort: 'date:desc' # Default is title:asc
-  #   fields: # The fields for each document, usually in front matter
-  #     - { label: 'Title', name: 'title', widget: 'string' }
-  #     - {
-  #         label: 'Publish Date',
-  #         name: 'date',
-  #         widget: 'datetime',
-  #         format: 'dddd MMMM Do, YYYY',
-  #       }
-  #     - {
-  #         label: 'Featured Image',
-  #         name: 'thumbnail',
-  #         widget: 'image',
-  #         required: false,
-  #       }
-  #     - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Menu Categories'
+    name: 'menu_categories'
+    folder: 'assets/content/menu-categories' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    # slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - {
+          label: Description,
+          name: description,
+          widget: string,
+          required: false,
+        }

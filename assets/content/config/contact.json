@@ -1,5 +1,10 @@
 {
-	"address": "",
+	"address": "123 Flavortown Express",
+	"city": "Flavortown",
+	"state": "USA",
+	"zip": "55555",
+	"geo": {},
+	"notes": "Located 1 mile from the exit off Route 66",
 	"phone": "(555) 555-5555",
 	"email": "hi@verynicerestaurant.restaurant"
 }
