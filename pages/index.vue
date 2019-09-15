@@ -121,7 +121,7 @@ export default {
 			return this.$store.state.theme.info;
 		},
 		menuInfo() {
-			return this.$store.state.menu.categories;
+			return this.$store.state.menu.fullMenu;
 		}
 	},
 	components: {
