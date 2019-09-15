@@ -39,6 +39,7 @@
 						<nuxt-link
 							to="/about"
 							class="inline-flex items-center font-bold uppercase tracking-wider text-sm"
+							:aria-label="`Learn more about ${siteInfo.name}`"
 						>
 							<span class="mr-3">Learn more</span>
 							<svg
