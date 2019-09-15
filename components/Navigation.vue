@@ -1,6 +1,7 @@
 <template>
 	<header
-		class="fixed top-0 right-0 left-0 w-full px-0 md:px-3 bg-white shadow z-50 site-navigation"
+		class="fixed top-0 left-0 right-0 w-full px-0 md:px-3 bg-white shadow z-50 site-navigation"
+		ref="header"
 		:class="{'bg-white text-primary': !themeInfo.is_dark, 'bg-gray-900 text-white': themeInfo.is_dark}"
 	>
 		<div class="w-full container mx-auto flex items-center justify-between">
@@ -8,7 +9,7 @@
 				<nuxt-link to="/" exact class="py-2 px-3 text-2xl font-bold font-feature mr-5">{{siteInfo.name}}</nuxt-link>
 				<div class="hidden md:inline-flex items-center">
 					<nuxt-link to="/menu" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Menu</nuxt-link>
-					<nuxt-link to="/location" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Location</nuxt-link>
+					<!-- <nuxt-link to="/location" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Location</nuxt-link> -->
 					<nuxt-link to="/about" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">About</nuxt-link>
 					<nuxt-link to="/contact" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Contact</nuxt-link>
 				</div>
@@ -41,6 +42,7 @@
 </template>
 
 <script>
+import Headroom from "headroom.js";
 import SocialLinks from "~/components/SocialLinks";
 
 export default {
@@ -55,8 +57,28 @@ export default {
 			return this.$store.state.theme.info;
 		}
 	},
+	mounted() {
+		// var myElement = document.querySelector("header");
+		// construct an instance of Headroom, passing the element
+		console.log(this.$refs);
+		const headroom = new Headroom(this.$refs.header);
+		headroom.init();
+	},
 	components: {
 		SocialLinks
 	}
 };
 </script>
+
+<style>
+.headroom {
+	will-change: transform;
+	transition: transform 200ms linear;
+}
+.headroom--pinned {
+	transform: translateY(0%);
+}
+.headroom--unpinned {
+	transform: translateY(-100%);
+}
+</style>

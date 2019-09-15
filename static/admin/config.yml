@@ -31,8 +31,8 @@ collections:
               required: false,
             }
           - {
-              label: Eat app key,
-              name: eat_key,
+              label: OpenTable Restaurant ID,
+              name: opentable_id,
               widget: string,
               required: false,
             }

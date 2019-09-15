@@ -46,23 +46,7 @@
 				</div>
 			</div>
 			<div class="flex flex-wrap" style="margin: 0 -1rem;">
-				<article v-for="item in category.items" :key="item.slug" class="w-full md:w-1/2 p-4 mb-2">
-					<header class="w-full flex items-end">
-						<h3
-							class="flex-shrink-0 text-xl font-semibold leading-tight pr-3"
-							:class="{'uppercase tracking-wide': themeInfo.theme === 'modern'}"
-						>{{item.title}}</h3>
-						<div
-							class="flex-grow mb-1 border-b-2"
-							:class="{'border-dotted': themeInfo.theme === 'modern', 'border-solid': themeInfo.theme === 'classic'}"
-						></div>
-						<span class="flex-shrink-0 block pl-3 pb-1 leading-none">{{item.price}}</span>
-					</header>
-					<div class="mt-2">
-						<p class="lh-copy">{{item.description}}</p>
-						<p v-if="item.notes && item.notes !== ''" class="italic text-sm">* {{item.notes}}</p>
-					</div>
-				</article>
+				<menu-item v-for="item in category.items" :key="item.slug" :item="item" />
 			</div>
 		</section>
 	</div>
@@ -70,6 +54,7 @@
 
 <script>
 import * as themeInfo from "~/assets/content/config/theme.json";
+import MenuItem from "~/components/MenuItem";
 
 export default {
 	layout: themeInfo.theme,
@@ -98,6 +83,9 @@ export default {
 		menu() {
 			return this.$store.state.menu.fullMenu;
 		}
+	},
+	components: {
+		MenuItem
 	}
 };
 </script>

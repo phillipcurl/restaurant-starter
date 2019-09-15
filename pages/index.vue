@@ -16,7 +16,18 @@
 				>View our Menu</nuxt-link>
 			</div>
 		</hero-section>
-		<div class="w-full container mx-auto flex md:flex-row-reverse flex-wrap items-stretch py-16">
+		<div class="w-full container mx-auto pt-16 pb-8 px-4">
+			<div class="bg-gray-100 w-full flex items-center justify-center py-6">
+				<iframe
+					src="https://www.opentable.com/widget/reservation/canvas?rid=1041577&type=standard&theme=wide&overlay=false&domain=com&lang=en-US&r3abvariant=true&r3uid=8YElF9Equ&newtab=false&disablega=false"
+					frameborder="0"
+					width="805"
+					loading="lazy"
+					class="overflow-y-hidden"
+				></iframe>
+			</div>
+		</div>
+		<div class="w-full container mx-auto flex md:flex-row-reverse flex-wrap items-stretch py-8">
 			<div class="w-full md:w-1/2 mb-6 md:mb-0">
 				<location-card class="h-full" />
 			</div>

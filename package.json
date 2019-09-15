@@ -14,6 +14,7 @@
     "@bazzite/nuxt-netlify": "^0.1.1",
     "@nuxtjs/markdownit": "github:syffs/nuxtv2-markdownit",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "headroom.js": "^0.10.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
