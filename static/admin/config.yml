@@ -103,3 +103,12 @@ collections:
           widget: string,
           required: false,
         }
+      - {
+        label: Order on Menu,
+        name: menu_order,
+        widget: number,
+        default: 2,
+        valueType: int,
+        min: 1,
+        max: 101,
+      }

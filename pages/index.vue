@@ -85,6 +85,9 @@
 				<div style="text-align: left;">
 					<pre>{{themeInfo}}</pre>
 				</div>
+				<div style="text-align: left;">
+					<pre>{{menuInfo}}</pre>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -115,6 +118,9 @@ export default {
 		},
 		themeInfo() {
 			return this.$store.state.theme.info;
+		},
+		menuInfo() {
+			return this.$store.state.menu.fullMenu;
 		}
 	},
 	components: {

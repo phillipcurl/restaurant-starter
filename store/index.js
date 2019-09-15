@@ -10,6 +10,7 @@ export const actions = {
 			await dispatch('social/fetchSocialInfo');
 			await dispatch('theme/fetchThemeInfo');
 			await dispatch('about/fetchAboutInfo');
+			await dispatch('menu/fetchMenu');
 		} catch (e) {
 			console.log(e);
 		}
