@@ -89,12 +89,13 @@ collections:
             }
           - { label: Phone Number, name: phone, widget: string }
           - { label: Email, name: email, widget: string }
-  - label: 'Menu Categories'
+  - label: 'Menu Category'
     name: 'menu_categories'
     folder: 'assets/content/menu-categories' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     # slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     format: 'json'
+    sort: 'menu_order:asc'
     fields:
       - { label: Title, name: title, widget: string }
       - {
@@ -107,8 +108,33 @@ collections:
         label: Order on Menu,
         name: menu_order,
         widget: number,
-        default: 2,
         valueType: int,
         min: 1,
         max: 101,
       }
+  - name: 'menu_item' # Used in routes, e.g., /admin/collections/blog
+    label: 'Menu Item' # Used in the UI
+    folder: 'assets/content/menu-items' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    # slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    # sort: 'date:desc' # Default is title:asc
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+        label: Price,
+        name: price,
+        widget: number,
+        valueType: int
+      }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Notes', name: 'notes', widget: 'string', required: false }
+      - {
+          label: 'Category',
+          name: 'menu_category',
+          widget: 'relation',
+          collection: 'menu_categories',
+          searchFields: ['title'],
+          valueField: 'title',
+          displayFields: ['title']
+        }

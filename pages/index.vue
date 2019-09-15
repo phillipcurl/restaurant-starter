@@ -40,6 +40,7 @@
 							to="/about"
 							class="inline-flex items-center font-bold uppercase tracking-wider text-sm"
 							:aria-label="`Learn more about ${siteInfo.name}`"
+							:title="`Learn more about ${siteInfo.name}`"
 						>
 							<span class="mr-3">Learn more</span>
 							<svg
@@ -120,7 +121,7 @@ export default {
 			return this.$store.state.theme.info;
 		},
 		menuInfo() {
-			return this.$store.state.menu.fullMenu;
+			return this.$store.state.menu.categories;
 		}
 	},
 	components: {
