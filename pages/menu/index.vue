@@ -12,7 +12,7 @@
 				/>
 			</svg>
 		</div>
-		<section v-for="section in sections" :key="section.name" class="py-12">
+		<section v-for="category in menu.categories" :key="category.title" class="py-12">
 			<div
 				class="w-full max-w-lg mx-auto text-center"
 				:class="{'mb-8': themeInfo.theme === 'modern', 'mb-6': themeInfo.theme === 'classic'}"
@@ -20,8 +20,8 @@
 				<h2
 					class="text-2xl md:text-3xl font-black tracking-wide"
 					:class="{'uppercase tracking-wider': themeInfo.theme === 'modern'}"
-				>{{ section.name }}</h2>
-				<p>Please allow 30 minutes to prepare. Serves 2–4 people.</p>
+				>{{ category.title }}</h2>
+				<p v-if="category.desccription && category.description !== ''">{{category.description}}</p>
 				<div v-if="themeInfo.theme === 'modern'" class="w-32 mx-auto border-t-4 border-secondary mt-6"></div>
 				<div v-if="themeInfo.theme === 'classic'" class="w-6 h-6 mx-auto mt-4">
 					<svg class="w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 214.8 612 362.4">
@@ -46,22 +46,21 @@
 				</div>
 			</div>
 			<div class="flex flex-wrap" style="margin: 0 -1rem;">
-				<article v-for="i in 8" :key="i" class="w-full md:w-1/2 p-4 mb-2">
+				<article v-for="item in category.items" :key="item.slug" class="w-full md:w-1/2 p-4 mb-2">
 					<header class="w-full flex items-end">
 						<h3
 							class="flex-shrink-0 text-xl font-semibold leading-tight pr-3"
 							:class="{'uppercase tracking-wide': themeInfo.theme === 'modern'}"
-						>Breakfast Bowl</h3>
+						>{{item.title}}</h3>
 						<div
 							class="flex-grow mb-1 border-b-2"
 							:class="{'border-dotted': themeInfo.theme === 'modern', 'border-solid': themeInfo.theme === 'classic'}"
 						></div>
-						<span class="flex-shrink-0 block pl-3 pb-1 leading-none">$8.50</span>
+						<span class="flex-shrink-0 block pl-3 pb-1 leading-none">{{item.price}}</span>
 					</header>
 					<div class="mt-2">
-						<p
-							class="lh-copy"
-						>Black Bean Cake, Greens, Tomato & Avocado Pico drizzled with Lime Cream (Add egg $1)</p>
+						<p class="lh-copy">{{item.description}}</p>
+						<p v-if="item.notes && item.notes !== ''" class="italic text-sm">* {{item.notes}}</p>
 					</div>
 				</article>
 			</div>
@@ -95,6 +94,9 @@ export default {
 		},
 		themeInfo() {
 			return this.$store.state.theme.info;
+		},
+		menu() {
+			return this.$store.state.menu.fullMenu;
 		}
 	}
 };
