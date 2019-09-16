@@ -13,6 +13,17 @@ import Navigation from "~/components/Navigation";
 import SiteFooter from "~/components/Footer";
 
 export default {
+	head() {
+		return {
+			link: [
+				{
+					href:
+						"https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap",
+					rel: "stylesheet"
+				}
+			]
+		};
+	},
 	computed: {
 		siteInfo() {
 			return this.$store.state.siteInfo;
@@ -32,7 +43,7 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap"); */
 
 .theme-classic h1,
 .theme-classic h2,

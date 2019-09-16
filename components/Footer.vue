@@ -5,11 +5,11 @@
 	>
 		<div class="w-full container mx-auto py-16 px-4">
 			<section class="flex flex-wrap md:flex-no-wrap md:justify-between">
-				<div class="flex-shrink-0">
+				<div class="w-full md:w-auto flex-shrink-0">
 					<div class="w-48 mx-auto md:mx-0">
 						<img :src="siteInfo.icon" alt srcset />
 					</div>
-					<div class="mt-6">
+					<div class="my-6">
 						<a
 							:href="`http://maps.google.com/maps?q=${encodedAddress}`"
 							target="_blank"

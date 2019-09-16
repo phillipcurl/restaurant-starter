@@ -22,7 +22,7 @@
 					:class="{'mb-8': themeInfo.theme === 'modern', 'mb-6': themeInfo.theme === 'classic'}"
 				>
 					<h2
-						class="text-2xl md:text-3xl font-black tracking-wide"
+						class="text-3xl lg:text-4xl font-black tracking-wide"
 						:class="{'uppercase tracking-wider': themeInfo.theme === 'modern'}"
 					>{{ category.title }}</h2>
 					<p v-if="category.desccription && category.description !== ''">{{category.description}}</p>
