@@ -42,8 +42,6 @@ collections:
         file: 'assets/content/config/theme.json'
         fields:
           - { label: Brand Color, name: brand_color, widget: string }
-          - { label: Primary Color, name: primary_color, widget: string }
-          - { label: Secondary Color, name: secondary_color, widget: string }
           - {
               label: Theme,
               name: theme,

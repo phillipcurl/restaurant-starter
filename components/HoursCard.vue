@@ -48,13 +48,11 @@ export default {
 			if (this.themeInfo.theme === "classic") {
 				return `border-near-black border-2 p-10 m-4`;
 			} else if (this.themeInfo.theme === "modern") {
-				let baseClass = `p-10 m-4`;
 				if (this.themeInfo.is_dark) {
-					return baseClass + " bg-gray-900";
+					return "p-10 m-4 bg-gray-900";
 				} else {
-					return baseClass + " bg-gray-100";
+					return "p-10 m-4 bg-gray-100";
 				}
-				return ``;
 			} else {
 				return "";
 			}
