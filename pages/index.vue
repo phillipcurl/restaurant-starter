@@ -3,7 +3,7 @@
 		<hero-section>
 			<h1
 				class="text-4xl md:text-5xl font-black pt-0 pb-1 mb-0 lh-none break-word"
-				:class="{'uppercase tracking-widest': themeInfo.theme === 'modern'}"
+				:class="{'uppercase tracking-wide': themeInfo.theme === 'modern'}"
 			>{{siteInfo.name}}</h1>
 			<div v-if="themeInfo.theme === 'modern'" class="w-32 mx-auto border-t-4 border-near-black"></div>
 			<p
@@ -85,28 +85,6 @@
 				</li>
 			</ul>
 		</div>
-
-		<div class="p-12">
-			<button @click="showData = !showData">Toggle Data</button>
-			<div v-if="showData" class="mt-12">
-				<!-- <img :src="siteInfo.icon" :alt="`${siteInfo.name} icon`" /> -->
-				<div style="text-align: left;">
-					<pre>{{siteInfo}}</pre>
-				</div>
-				<div style="text-align: left;">
-					<pre>{{contactInfo}}</pre>
-				</div>
-				<div style="text-align: left;">
-					<pre>{{socialInfo}}</pre>
-				</div>
-				<div style="text-align: left;">
-					<pre>{{themeInfo}}</pre>
-				</div>
-				<div style="text-align: left;">
-					<pre>{{menuInfo}}</pre>
-				</div>
-			</div>
-		</div>
 	</div>
 </template>
 
@@ -118,11 +96,6 @@ import LocationCard from "~/components/LocationCard";
 
 export default {
 	layout: themeInfo.theme,
-	data() {
-		return {
-			showData: false
-		};
-	},
 	computed: {
 		siteInfo() {
 			return this.$store.state.siteInfo;

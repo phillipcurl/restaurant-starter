@@ -1,11 +1,11 @@
 <template>
 	<footer
-		class="w-full"
+		class="w-full mt-8"
 		:class="{'bg-gray-900': themeInfo.is_dark, 'bg-gray-100': !themeInfo.is_dark}"
 	>
 		<div class="w-full container mx-auto py-16 px-4">
 			<section class="flex flex-wrap md:flex-no-wrap md:justify-between">
-				<div class="flex-grow w-full">
+				<div class="flex-shrink-0">
 					<div class="w-48 mx-auto md:mx-0">
 						<img :src="siteInfo.icon" alt srcset />
 					</div>
@@ -23,7 +23,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="flex-shrink-0">
+				<div class="flex-shrink-0 w-full md:w-auto">
 					<iframe
 						title="Make a reservation on OpenTable"
 						src="https://www.opentable.com/widget/reservation/canvas?rid=1041577&amp;type=standard&amp;theme=standard&amp;overlay=false&amp;domain=com&amp;lang=en-US&amp;r3abvariant=true&amp;r3uid=aDsEdPtsZg&amp;newtab=false&amp;disablega=false"
