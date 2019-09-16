@@ -2,10 +2,10 @@
 	<div class="home-page">
 		<hero-section>
 			<h1
-				class="text-5xl md:text-6xl font-black py-0 mb-0 lh-none break-word"
+				class="text-4xl md:text-5xl font-black py-0 mb-0 lh-none break-word"
 				:class="{'uppercase tracking-widest': themeInfo.theme === 'modern'}"
 			>{{siteInfo.name}}</h1>
-			<div v-if="themeInfo.theme === 'modern'" class="w-32 mx-auto border-t-8 border-primary"></div>
+			<div v-if="themeInfo.theme === 'modern'" class="w-32 mx-auto border-t-8 border-near-black"></div>
 			<p
 				class="w-full max-w-md mx-auto text-2xl font-bold py-4 mb-4 lh-none font-feature"
 			>{{siteInfo.description}}</p>
@@ -36,7 +36,10 @@
 			</div>
 		</div>
 		<div class="w-full container mx-auto px-4 py-8">
-			<div class="flex lg:flex-row-reverse flex-wrap items-center bg-gray-100">
+			<div
+				class="flex lg:flex-row-reverse flex-wrap items-center"
+				:class="{'bg-gray-900': themeInfo.is_dark, 'bg-gray-100': !themeInfo.is_dark}"
+			>
 				<div
 					class="w-full lg:w-1/2 bg-cover"
 					:style="`min-height: 400px; background-image: url(/images/uploads/bg.jpg)`"
@@ -54,7 +57,7 @@
 							:title="`Learn more about ${siteInfo.name}`"
 						>
 							<span
-								class="font-bold uppercase tracking-wider text-sm py-1 mr-3 border-b-2 border-primary"
+								class="font-bold uppercase tracking-wider text-sm py-1 mr-3 border-b-2 border-brand"
 							>Learn more</span>
 							<svg
 								viewBox="0 0 24 24"

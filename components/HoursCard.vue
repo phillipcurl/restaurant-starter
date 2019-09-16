@@ -1,11 +1,7 @@
 <template>
-	<section
-		class="flex flex-col"
-		:class="{'border-primary border-2 p-10 m-4': themeInfo.theme === 'classic', 'bg-gray-100 p-10 m-4': themeInfo.theme === 'modern'}"
-	>
+	<section class="flex flex-col" :class="cardClass">
 		<h2 class="text-3xl lg:text-4xl font-black text-center">Hours</h2>
-		<div v-if="themeInfo.theme === 'modern'" class="w-24 mx-auto border-t-4 border-secondary mt-3"></div>
-
+		<div v-if="themeInfo.theme === 'modern'" class="w-24 mx-auto border-t-4 border-brand mt-3"></div>
 		<div v-if="themeInfo.theme === 'classic'" class="w-32 mx-auto">
 			<svg class="w-full" viewBox="0 0 81 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
@@ -47,6 +43,21 @@ export default {
 		},
 		themeInfo() {
 			return this.$store.state.theme.info;
+		},
+		cardClass() {
+			if (this.themeInfo.theme === "classic") {
+				return `border-near-black border-2 p-10 m-4`;
+			} else if (this.themeInfo.theme === "modern") {
+				let baseClass = `p-10 m-4`;
+				if (this.themeInfo.is_dark) {
+					return baseClass + " bg-gray-900";
+				} else {
+					return baseClass + " bg-gray-100";
+				}
+				return ``;
+			} else {
+				return "";
+			}
 		}
 	}
 };

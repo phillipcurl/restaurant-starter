@@ -1,6 +1,7 @@
 const Color = require('color');
 const cssGen = require('css-generator');
 const fs = require('fs');
+const themeConfig = require('./assets/content/config/theme.json');
 
 const options = {
 	indentation: '  ' // 2 spaces
@@ -38,7 +39,7 @@ function getValidatedColor({
 	return newColor;
 }
 
-const primaryColor = Color('tomato');
+const primaryColor = Color(themeConfig.brand_color);
 const primaryColorLight = getValidatedColor({
 	colorToChange: primaryColor,
 	mixingColor: Color('white'),

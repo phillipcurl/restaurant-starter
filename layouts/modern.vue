@@ -1,5 +1,5 @@
 <template>
-	<div class="theme-modern">
+	<div class="theme-modern text-near-black" :class="{'bg-gray-800' : themeInfo.is_dark }">
 		<navigation />
 		<main class="main-content">
 			<nuxt />
@@ -13,6 +13,17 @@ import Navigation from "~/components/Navigation";
 import SiteFooter from "~/components/Footer";
 
 export default {
+	computed: {
+		siteInfo() {
+			return this.$store.state.siteInfo;
+		},
+		contactInfo() {
+			return this.$store.state.contact.info;
+		},
+		themeInfo() {
+			return this.$store.state.theme.info;
+		}
+	},
 	components: {
 		Navigation,
 		SiteFooter

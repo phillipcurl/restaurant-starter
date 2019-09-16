@@ -1,8 +1,9 @@
 <template>
 	<div class="w-full h-full flex items-center justify-center px-3" :style="heroStyles">
 		<div
-			class="w-full max-w-xl text-center p-3 border-8 home-page--hero__content"
-			:class="{'border-brand': themeInfo.theme === 'classic', 'border-transparent': themeInfo.theme === 'modern'}"
+			class="w-full max-w-2xl text-center p-3 border-8 home-page--hero__content"
+			:class="{'border-near-black': themeInfo.theme === 'classic', 'border-transparent': themeInfo.theme === 'modern'}"
+			:style="heroContentStyles"
 		>
 			<slot />
 		</div>
@@ -30,6 +31,11 @@ export default {
 		},
 		heroStyles() {
 			return `min-height: ${this.height}; background: url(${this.image}) center center; background-size: cover;`;
+		},
+		heroContentStyles() {
+			return this.themeInfo.is_dark
+				? `background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));`
+				: `background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));`;
 		}
 	}
 };
@@ -38,10 +44,5 @@ export default {
 <style>
 .home-page--hero__content {
 	/* background-image: url(~static/images/uploads/bg.jpg); */
-
-	background: linear-gradient(
-		rgba(255, 255, 255, 0.6),
-		rgba(255, 255, 255, 0.6)
-	);
 }
 </style>

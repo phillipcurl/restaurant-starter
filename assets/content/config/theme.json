@@ -1,6 +1,5 @@
 {
-	"primary_color": "black",
-	"secondary_color": "tomato",
-	"theme": "classic",
-	"is_dark": false
+	"brand_color": "#E2BF2D",
+	"theme": "modern",
+	"is_dark": true
 }

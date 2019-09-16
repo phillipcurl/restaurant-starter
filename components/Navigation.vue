@@ -1,12 +1,19 @@
 <template>
 	<header
-		class="fixed top-0 left-0 right-0 w-full px-0 md:px-3 py-2 bg-white shadow z-50 site-navigation"
+		class="fixed top-0 left-0 right-0 w-full px-0 md:px-3 bg-white shadow z-50 site-navigation text-near-black"
 		ref="header"
-		:class="{'bg-white text-primary': !themeInfo.is_dark, 'bg-gray-900 text-white': themeInfo.is_dark}"
+		:class="{'bg-white': !themeInfo.is_dark, 'bg-gray-900': themeInfo.is_dark}"
 	>
 		<div class="w-full container mx-auto flex items-center justify-between">
 			<nav class="flex-grow inline-flex items-center">
-				<nuxt-link to="/" exact class="py-2 px-3 text-2xl font-bold font-feature mr-5">{{siteInfo.name}}</nuxt-link>
+				<nuxt-link
+					to="/"
+					exact
+					class="py-2 px-3 text-2xl font-bold font-feature mr-5"
+					aria-label="Home Page"
+				>
+					<img :src="siteInfo.icon" style="max-width: 100px;" alt srcset />
+				</nuxt-link>
 				<div class="hidden md:inline-flex items-center">
 					<nuxt-link to="/menu" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Menu</nuxt-link>
 					<!-- <nuxt-link to="/location" class="py-2 px-3 uppercase tracking-wider text-sm font-bold">Location</nuxt-link> -->
@@ -19,7 +26,7 @@
 					href="https://www.opentable.com/r/south-village-grille-reservations-columbus?restref=1041577&lang=en-US"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="bg-secondary py-2 px-3 text-primary leading-none font-bold rounded mr-2"
+					class="bg-brand text-brand_contrast py-2 px-3 leading-none font-bold rounded mr-2"
 				>Reserve Now</a>
 				<a
 					:href="`tel:${contactInfo.phone}`"
