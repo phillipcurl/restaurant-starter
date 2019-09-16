@@ -2,12 +2,12 @@
 	<div class="home-page">
 		<hero-section>
 			<h1
-				class="text-4xl md:text-5xl font-black py-0 mb-0 lh-none break-word"
+				class="text-4xl md:text-5xl font-black pt-0 pb-1 mb-0 lh-none break-word"
 				:class="{'uppercase tracking-widest': themeInfo.theme === 'modern'}"
 			>{{siteInfo.name}}</h1>
-			<div v-if="themeInfo.theme === 'modern'" class="w-32 mx-auto border-t-8 border-near-black"></div>
+			<div v-if="themeInfo.theme === 'modern'" class="w-32 mx-auto border-t-4 border-near-black"></div>
 			<p
-				class="w-full max-w-md mx-auto text-2xl font-bold py-4 mb-4 lh-none font-feature"
+				class="w-full max-w-md mx-auto text-xl md:text-2xl font-bold py-4 mb-4 lh-none font-feature"
 			>{{siteInfo.description}}</p>
 			<div class="mb-6">
 				<nuxt-link
@@ -42,14 +42,14 @@
 			>
 				<div
 					class="w-full lg:w-1/2 bg-cover"
-					:style="`min-height: 400px; background-image: url(/images/uploads/bg.jpg)`"
+					:style="`min-height: 400px; background-image: url(/images/uploads/bg.jpg);`"
 				></div>
 				<div class="w-full lg:w-1/2 px-4 sm:px-6 md:px-8 py-10 xl:py-16">
 					<div class="w-full max-w-lg mx-auto">
-						<h2 class="text-3xl md:text-4xl">About {{siteInfo.name}}</h2>
+						<h2 class="text-3xl lg:text-4xl font-black">About Us</h2>
 						<p
 							class="text-lg py-4"
-						>With its rustic interior, pops of bright color and welcoming atmosphere, La Marcha is a tapas bar in the heart of Berkeley that encapsulates the vibrant culinary culture of Spain. Visitors will feel as though they have strolled right off the streets of Spain and into an authentic neighborhood tapas place.</p>
+						>If you are looking for a place in Columbus, OH where you can kick back and have good food and drinks, drop by South Village Grille. Located in the heart of the bustling neighborhood of German Village, our restaurant boasts a Modern American menu that is rooted in European cooking techniques. We offer a range of dishes that everyone can enjoy, including pizzas, steaks, and fresh oysters.</p>
 						<nuxt-link
 							to="/about"
 							class="inline-flex items-center"

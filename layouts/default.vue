@@ -63,6 +63,19 @@ h6:not(.font-black) {
 
 .main-content {
 	padding-top: 68px;
+	min-height: 70vh;
+}
+
+.page-enter-active,
+.page-leave-active {
+	transition: opacity 0.25s cubic-bezier(0.55, 0, 0.1, 1),
+		transform 0.25s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.page-enter,
+.page-leave-active {
+	opacity: 0;
+	transform: translateX(-15px);
 }
 
 @media screen and (max-width: 1024px) {

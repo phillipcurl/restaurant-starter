@@ -5,7 +5,7 @@
 		:class="{'bg-white': !themeInfo.is_dark, 'bg-gray-900': themeInfo.is_dark}"
 	>
 		<div class="w-full container mx-auto flex items-center justify-between">
-			<nav class="flex-grow inline-flex items-center">
+			<nav class="md:flex-grow inline-flex items-center">
 				<nuxt-link
 					to="/"
 					exact
@@ -50,6 +50,23 @@
 				</a>
 				<social-links class="hidden md:inline-flex" />
 			</div>
+			<button class="flex-no-shrink inline-flex md:hidden py-2 px-3" aria-label="Toggle Site Menu">
+				<svg
+					viewBox="0 0 24 24"
+					width="24"
+					height="24"
+					stroke="currentColor"
+					stroke-width="2"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="css-i6dzq1"
+				>
+					<line x1="3" y1="12" x2="21" y2="12" />
+					<line x1="3" y1="6" x2="21" y2="6" />
+					<line x1="3" y1="18" x2="21" y2="18" />
+				</svg>
+			</button>
 		</div>
 	</header>
 </template>

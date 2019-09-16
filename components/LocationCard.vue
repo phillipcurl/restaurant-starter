@@ -18,6 +18,9 @@
 			>
 				<p class="text-xl font-semibold font-feature">{{contactInfo.address}}</p>
 				<p>{{contactInfo.city}}, {{contactInfo.state}} {{contactInfo.zip}}</p>
+				<span
+					class="inline-block bg-brand text-brand_contrast text-sm font-bold uppercase tracking-wide px-3 py-2 mt-3"
+				>View Map</span>
 			</a>
 			<p class="italic">{{contactInfo.notes}}</p>
 		</div>
