@@ -54,7 +54,6 @@ export const actions = {
 		await commit('SET_MENU_ITEMS', menuItems);
 	},
 	async buildMenu({ commit, state }) {
-		console.log('state: ', state);
 		const fullMenu = {
 			categories: state.categories.map(category => {
 				return {

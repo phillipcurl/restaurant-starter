@@ -12,21 +12,21 @@
 			<div class="mb-6">
 				<nuxt-link
 					to="/menu"
-					class="bg-secondary text-primary text-lg font-bold uppercase tracking-wider p-3 font-feature"
+					class="bg-brand text-brand_contrast text-lg font-bold uppercase tracking-wider p-3"
 				>View our Menu</nuxt-link>
 			</div>
 		</hero-section>
-		<div class="w-full container mx-auto pt-16 pb-8 px-4">
-			<div class="bg-gray-100 w-full flex items-center justify-center py-6">
-				<iframe
-					src="https://www.opentable.com/widget/reservation/canvas?rid=1041577&type=standard&theme=wide&overlay=false&domain=com&lang=en-US&r3abvariant=true&r3uid=8YElF9Equ&newtab=false&disablega=false"
-					frameborder="0"
-					width="805"
-					loading="lazy"
-					class="overflow-y-hidden"
-				></iframe>
+		<!-- <div class="w-full container mx-auto pt-16 pb-8 px-4">
+			<div
+				class="bg-gray-100 w-full flex items-center justify-center py-6"
+				style="padding-bottom: -75px;"
+			>
+				<script
+					type="text/javascript"
+					src="//www.opentable.com/widget/reservation/loader?rid=1041577&type=standard&theme=wide&iframe=true&overlay=false&domain=com&lang=en-US"
+				></script>
 			</div>
-		</div>
+		</div>-->
 		<div class="w-full container mx-auto flex md:flex-row-reverse flex-wrap items-stretch py-8">
 			<div class="w-full md:w-1/2 mb-6 md:mb-0">
 				<location-card class="h-full" />
@@ -49,14 +49,12 @@
 						>With its rustic interior, pops of bright color and welcoming atmosphere, La Marcha is a tapas bar in the heart of Berkeley that encapsulates the vibrant culinary culture of Spain. Visitors will feel as though they have strolled right off the streets of Spain and into an authentic neighborhood tapas place.</p>
 						<nuxt-link
 							to="/about"
-							class="inline-flex items-center font-bold uppercase tracking-wider text-sm"
+							class="inline-flex items-center"
 							:aria-label="`Learn more about ${siteInfo.name}`"
 							:title="`Learn more about ${siteInfo.name}`"
 						>
 							<span
-								class="mr-3"
-								:aria-label="`Learn more about ${siteInfo.name}`"
-								:title="`Learn more about ${siteInfo.name}`"
+								class="font-bold uppercase tracking-wider text-sm py-1 mr-3 border-b-2 border-primary"
 							>Learn more</span>
 							<svg
 								viewBox="0 0 24 24"

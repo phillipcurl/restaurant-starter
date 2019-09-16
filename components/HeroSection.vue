@@ -2,7 +2,7 @@
 	<div class="w-full h-full flex items-center justify-center px-3" :style="heroStyles">
 		<div
 			class="w-full max-w-xl text-center p-3 border-8 home-page--hero__content"
-			:class="{'border-primary': themeInfo.theme === 'classic', 'border-transparent': themeInfo.theme === 'modern'}"
+			:class="{'border-brand': themeInfo.theme === 'classic', 'border-transparent': themeInfo.theme === 'modern'}"
 		>
 			<slot />
 		</div>

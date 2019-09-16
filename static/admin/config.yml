@@ -112,8 +112,8 @@ collections:
         min: 1,
         max: 101,
       }
-  - name: 'menu_item' # Used in routes, e.g., /admin/collections/blog
-    label: 'Menu Item' # Used in the UI
+  - label: 'Menu Item' # Used in the UI
+    name: 'menu_item' # Used in routes, e.g., /admin/collections/blog
     folder: 'assets/content/menu-items' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     # slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
@@ -138,3 +138,29 @@ collections:
           valueField: 'title',
           displayFields: ['title']
         }
+  - label: 'Pages' # Used in the UI
+    name: 'page' # Used in routes, e.g., /admin/collections/blog
+    folder: 'assets/content/page/posts' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Featured Image',
+          name: 'thumbnail',
+          widget: 'image',
+          required: false,
+        }
+      # - {
+      #     label: 'Layout',
+      #     name: 'layout',
+      #     widget: 'relation',
+      #     collection: 'pagelayouts',
+      #     searchFields: ['title'],
+      #     valueField: 'title',
+      #     displayFields: ['title'],
+      #     required: false,
+      #   }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

@@ -36,7 +36,7 @@ export default {
 	/*
 	 ** Global CSS
 	 */
-	css: [],
+	css: ['~/assets/css/theme.css'],
 
 	/*
 	 ** Nuxt.js dev-modules

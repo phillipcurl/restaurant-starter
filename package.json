@@ -1,24 +1,27 @@
 {
-  "name": "nuxt-netlify-starter",
-  "version": "1.0.0",
-  "description": "A starter template for building statically-generated Nuxt.js sites with a Netlify CMS backend.",
-  "author": "Phillip Curl",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build --no-lock",
-    "start": "nuxt start",
-    "generate": "nuxt generate --no-lock"
-  },
-  "dependencies": {
-    "@bazzite/nuxt-netlify": "^0.1.1",
-    "@nuxtjs/markdownit": "github:syffs/nuxtv2-markdownit",
-    "@nuxtjs/pwa": "^3.0.0-0",
-    "headroom.js": "^0.10.2",
-    "nuxt": "^2.0.0"
-  },
-  "devDependencies": {
-    "@nuxtjs/tailwindcss": "^1.1.2",
-    "glob": "^7.1.4"
-  }
+	"name": "nuxt-netlify-starter",
+	"version": "1.0.0",
+	"description": "A starter template for building statically-generated Nuxt.js sites with a Netlify CMS backend.",
+	"author": "Phillip Curl",
+	"private": true,
+	"scripts": {
+		"dev": "npm run generate-theme && nuxt",
+		"build": "npm run generate-theme && nuxt build --no-lock",
+		"start": "nuxt start",
+		"generate": "npm run generate-theme && nuxt generate --no-lock",
+		"generate-theme": "node build-theme"
+	},
+	"dependencies": {
+		"@bazzite/nuxt-netlify": "^0.1.1",
+		"@nuxtjs/markdownit": "github:syffs/nuxtv2-markdownit",
+		"@nuxtjs/pwa": "^3.0.0-0",
+		"headroom.js": "^0.10.2",
+		"nuxt": "^2.0.0"
+	},
+	"devDependencies": {
+		"@nuxtjs/tailwindcss": "^1.1.2",
+		"color": "^3.1.2",
+		"css-generator": "^1.0.1",
+		"glob": "^7.1.4"
+	}
 }

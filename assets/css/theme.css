@@ -1,0 +1,8 @@
+:root {
+  --color-brand: rgb(255, 99, 71);
+  --color-brand_contrast: rgb(17, 17, 17);
+  --color-brand-light: rgb(255, 177, 163);
+  --color-brand-light_contrast: rgb(17, 17, 17);
+  --color-brand-dark: rgb(171, 70, 52);
+  --color-brand-dark_contrast: rgb(255, 255, 255);
+}

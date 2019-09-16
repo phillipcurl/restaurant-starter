@@ -4,15 +4,18 @@
 		<main class="main-content">
 			<nuxt />
 		</main>
+		<site-footer />
 	</div>
 </template>
 
 <script>
 import Navigation from "~/components/Navigation";
+import SiteFooter from "~/components/Footer";
 
 export default {
 	components: {
-		Navigation
+		Navigation,
+		SiteFooter
 	}
 };
 </script>
@@ -38,16 +41,23 @@ body {
 	margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1:not(.font-black),
+h2:not(.font-black),
+h3:not(.font-black),
+h4:not(.font-black),
+h5:not(.font-black),
+h6:not(.font-black) {
 	font-weight: 700;
 }
 
 .main-content {
-	padding-top: 52px;
+	padding-top: 68px;
+}
+
+@media screen and (max-width: 1024px) {
+	.container {
+		width: 100%;
+		max-width: 100%;
+	}
 }
 </style>
