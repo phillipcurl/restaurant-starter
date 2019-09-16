@@ -1,5 +1,6 @@
 {
-  "name": "Flavortown",
+  "name": "South Village Grille",
   "description": "They make a porchetta that you won’t forgetta.",
-  "icon": "/images/uploads/guy.png"
+  "icon": "/images/uploads/svg.png",
+  "opentable_id": "1041577"
 }
