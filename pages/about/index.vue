@@ -1,14 +1,17 @@
 <template>
 	<div class="about-page">
 		<hero-section height="55vh">
-			<h1
-				class="text-5xl font-black py-0 mb-0 lh-none break-word"
-				:class="{'uppercase tracking-wide': themeInfo.theme === 'modern'}"
-			>
-				<small class="text-left text-xl leading-none">About</small>
+			<div>
+				<small
+					class="text-left text-xl leading-none font-black"
+					:class="{'uppercase tracking-wide': themeInfo.theme === 'modern'}"
+				>About</small>
 				<divider />
-				{{siteInfo.name}}
-			</h1>
+				<h1
+					class="text-5xl py-0 mt-2 leading-none break-word font-black"
+					:class="{'uppercase tracking-wide': themeInfo.theme === 'modern'}"
+				>{{siteInfo.name}}</h1>
+			</div>
 		</hero-section>
 		<div class="w-full container mx-auto flex flex-wrap md:flex-no-wrap px-3 py-8">
 			<!-- <h1 class="text-6xl font-black">About {{siteInfo.name}}</h1> -->
