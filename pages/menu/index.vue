@@ -28,21 +28,25 @@
 					<p v-if="category.desccription && category.description !== ''">{{category.description}}</p>
 					<div v-if="themeInfo.theme === 'modern'" class="w-32 mx-auto border-t-4 border-brand mt-6"></div>
 					<div v-if="themeInfo.theme === 'classic'" class="w-6 h-6 mx-auto mt-4">
-						<svg class="w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 214.8 612 362.4">
+						<svg
+							class="w-full text-brand"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 214.8 612 362.4"
+						>
 							<g>
 								<g>
 									<path
-										fill="#CCCCCC"
+										fill="currentColor"
 										d="M0,416.8c0,0,75.3-79.2,186.2-51.5c0,0,65.4,21.8,27.7,91.1c0,0-35.7,57.4-101,23.8    C112.9,480.2,21.8,408.9,0,416.8z"
 									/>
 									<path
-										fill="#CCCCCC"
+										fill="currentColor"
 										d="M612,349.5c0,0-112.9-47.5-233.7,17.8c0,0-71.3,43.6-5.9,99c0,0,59.4,41.6,126.8-13.9    C497.1,450.5,584.3,351.4,612,349.5z"
 									/>
-									<circle fill="#CCCCCC" cx="299.1" cy="523.7" r="53.5" />
+									<circle fill="currentColor" cx="299.1" cy="523.7" r="53.5" />
 								</g>
 								<path
-									fill="#CCCCCC"
+									fill="currentColor"
 									d="M283.2,214.8c0,0-105,158.4-5.9,200c0,0,21.8,11.9,51.5-27.7C328.8,387.1,354.5,347.5,283.2,214.8z"
 								/>
 							</g>

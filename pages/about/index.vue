@@ -3,10 +3,10 @@
 		<hero-section height="55vh">
 			<h1
 				class="text-5xl font-black py-0 mb-0 lh-none break-word"
-				:class="{'uppercase tracking-widest': themeInfo.theme === 'modern'}"
+				:class="{'uppercase tracking-wide': themeInfo.theme === 'modern'}"
 			>
-				About
-				<br />
+				<small class="text-left text-xl leading-none">About</small>
+				<divider />
 				{{siteInfo.name}}
 			</h1>
 		</hero-section>
@@ -31,6 +31,7 @@ import HeroSection from "~/components/HeroSection";
 import MdContent from "~/components/MdContent";
 import HoursCard from "~/components/HoursCard";
 import LocationCard from "~/components/LocationCard";
+import Divider from "~/components/Divider";
 
 export default {
 	layout: themeInfo.theme,
@@ -49,7 +50,8 @@ export default {
 		HeroSection,
 		MdContent,
 		HoursCard,
-		LocationCard
+		LocationCard,
+		Divider
 	}
 };
 </script>

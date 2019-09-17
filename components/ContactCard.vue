@@ -1,5 +1,5 @@
 <template>
-	<card-base title="Location">
+	<card-base title="Contact">
 		<a
 			:href="`http://maps.google.com/maps?q=${encodedAddress}`"
 			target="_blank"
@@ -32,11 +32,6 @@ export default {
 		},
 		themeInfo() {
 			return this.$store.state.theme.info;
-		},
-		encodedAddress() {
-			return encodeURI(
-				`${this.contactInfo.address}, ${this.contactInfo.city}, ${this.contactInfo.state} ${this.contactInfo.zip}`
-			);
 		}
 	},
 	components: {

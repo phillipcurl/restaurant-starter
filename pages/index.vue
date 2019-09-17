@@ -5,14 +5,14 @@
 				class="text-4xl md:text-5xl font-black pt-0 pb-1 mb-0 lh-none break-word"
 				:class="{'uppercase tracking-wide': themeInfo.theme === 'modern'}"
 			>{{siteInfo.name}}</h1>
-			<div v-if="themeInfo.theme === 'modern'" class="w-32 mx-auto border-t-4 border-near-black"></div>
+			<divider />
 			<p
 				class="w-full max-w-md mx-auto text-xl md:text-2xl font-bold py-4 mb-4 lh-none font-feature"
 			>{{siteInfo.description}}</p>
 			<div class="mb-6">
 				<nuxt-link
 					to="/menu"
-					class="bg-brand text-brand_contrast text-lg font-bold uppercase tracking-wider p-3"
+					class="bg-brand text-brand_contrast text-lg font-bold uppercase tracking-wider shadow p-3"
 				>View our Menu</nuxt-link>
 			</div>
 		</hero-section>
@@ -27,17 +27,20 @@
 				></script>
 			</div>
 		</div>-->
-		<div class="w-full container mx-auto flex md:flex-row-reverse flex-wrap items-stretch py-8">
-			<div class="w-full md:w-1/2 mb-6 md:mb-0">
-				<location-card class="h-full" />
+		<div class="w-full container mx-auto flex flex-wrap items-stretch py-8">
+			<div class="w-full md:w-1/2 lg:w-1/3">
+				<location-card class="h-full m-4" />
 			</div>
-			<div class="w-full md:w-1/2">
-				<hours-card class="h-full" />
+			<div class="w-full md:w-1/2 lg:w-1/3 md:my-0 my-8">
+				<hours-card class="h-full m-4" />
+			</div>
+			<div class="w-full md:w-1/2 lg:w-1/3">
+				<location-card class="h-full m-4" />
 			</div>
 		</div>
 		<div class="w-full container mx-auto px-4 py-8">
 			<div
-				class="flex lg:flex-row-reverse flex-wrap items-center"
+				class="flex lg:flex-row-reverse flex-wrap items-stretch"
 				:class="{'bg-gray-900': themeInfo.is_dark, 'bg-gray-100': !themeInfo.is_dark}"
 			>
 				<div
@@ -93,6 +96,7 @@ import * as themeInfo from "~/assets/content/config/theme.json";
 import HeroSection from "~/components/HeroSection";
 import HoursCard from "~/components/HoursCard";
 import LocationCard from "~/components/LocationCard";
+import Divider from "~/components/Divider";
 
 export default {
 	layout: themeInfo.theme,
@@ -116,7 +120,8 @@ export default {
 	components: {
 		HeroSection,
 		HoursCard,
-		LocationCard
+		LocationCard,
+		Divider
 	}
 };
 </script>
